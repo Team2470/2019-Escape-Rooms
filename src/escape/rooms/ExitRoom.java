@@ -17,7 +17,7 @@ public class ExitRoom extends Room {
 	// ********************* Override Variables **********************
 	
 	public ExitRoom() {
-		_roomName = "The Dark";
+		super("The Dark");
 	}
 	
 	// ********************* Override Functions **********************

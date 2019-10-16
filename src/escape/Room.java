@@ -43,6 +43,15 @@ public class Room {
 	}
 	
 	// *********************** Public Functions ******************************* 
+	
+	/**
+	 * Initialize the room with the given name
+	 * @param name The name of the room
+	 */
+	public Room(String name) {
+		_roomName = name;
+	}
+	
 	/**
 	 * Sets the room to go to after this room is complete
 	 * @param room The room to enter next

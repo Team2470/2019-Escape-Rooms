@@ -8,7 +8,7 @@ public class SampleRoom extends Room {
 	
 	// ********************* Override Variables **********************
 	public SampleRoom() {
-		_roomName = "The Test";
+		super("The Test");
 	}
 	
 	// ********************* Override Functions **********************
@@ -41,5 +41,6 @@ public class SampleRoom extends Room {
 
 		System.out.println("\nThe terminal goes dark and the door opens...");
 
+		return;
 	}
 }
