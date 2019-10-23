@@ -63,7 +63,7 @@ public class Room {
 	// *********************** Override These *********************************
 	
 	/**
-	 * This is meant to be over riden and ONLY exit when the room is completely
+	 * This is meant to be over ridden and ONLY exit when the room is completely
 	 * explored.
 	 */
 	public void exploreRoom() {
