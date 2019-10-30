@@ -215,8 +215,8 @@ public class andrewRoom extends Room{
     //TODO fix printing Arrays
     public void printArray(String[][] array) {
     	int i,j;
-    	for(i = 0; i < 9; i++) {
-    		for(j = 0; j < 24; j++) {
+    	for(i = 0; i < shownMap.length; i++) {
+    		for(j = 0; j < shownMap[1].length; j++) {
     			if(array == cavernMap) {
     				System.out.println(cavernMap[j][i] + " ");
     			}else if(array == shownMap) {
