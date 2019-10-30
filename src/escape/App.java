@@ -58,6 +58,7 @@ public class App {
 		// ****************************************************
 		// Use: rooms.add(new [Your Class]());
 		// Example:
-		rooms.add(new SampleRoom());
+		rooms.add(new SamRoom());
+		
 	}
 }
