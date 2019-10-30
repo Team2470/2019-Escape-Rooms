@@ -7,7 +7,7 @@ public class andrewRoom extends Room{
     /**
      * create room
      */
-	
+	//TODO set random positions for pit and wumpus
 	 String [][] cavernMap = {
      		{"|","X","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","!","|"},
      		{"|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|"},
@@ -33,7 +33,7 @@ public class andrewRoom extends Room{
      		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"}};
 
     public andrewRoom(){
-        super("Cavern");
+        super("Wumpus caverns");
     }
 
     //*****************************Override Functions*******
@@ -44,7 +44,8 @@ public class andrewRoom extends Room{
 
     @Override
     public void exploreRoom(){
-
+    	
+    	/*
         System.out.println("You enter a series of caverns");
         System.out.print("Press Enter...");
 
@@ -80,6 +81,7 @@ public class andrewRoom extends Room{
 			e.printStackTrace();
 		}
         System.out.println("Good Luck");
+        */
         
         boolean end = false;
         boolean moveOn = false;
@@ -111,9 +113,11 @@ public class andrewRoom extends Room{
           			shownMap [priorX][priorY - 1] = "X";
           			priorY--;
           		}
+          		if(cavernMap[priorX + 1][priorY] != " " ) {
+          			shownMap[priorX + 1][priorY] = cavernMap[priorX + 1][priorY];
+          		}
           	}
           	if(move == "A" ) {
-          		
           		
           		if(priorX == 0) {
           			shownMap [priorX][priorY] = "-";
@@ -125,7 +129,9 @@ public class andrewRoom extends Room{
               		shownMap [priorX - 3][priorY] = "X";
               		priorX -= 3;
           		}
-          			
+          		if(cavernMap[priorX + 1][priorY] != " " ) {
+          			shownMap[priorX + 1][priorY] = cavernMap[priorX + 1][priorY];
+          		}
           	}
           	if(move == "S" ) {
           		
@@ -139,6 +145,9 @@ public class andrewRoom extends Room{
               		shownMap [priorX][priorY + 1] = "X";
               		priorY++;
           		}
+          		if(cavernMap[priorX + 1][priorY] != " " ) {
+          			shownMap[priorX + 1][priorY] = cavernMap[priorX + 1][priorY];
+          		}
           	}
           	if(move == "D" ) {
           		if(priorX == 22) {
@@ -150,6 +159,9 @@ public class andrewRoom extends Room{
           			shownMap [priorX][priorY] = "-";
               		shownMap [priorX + 3][priorY] = "X";
               		priorX += 3;
+          		}
+          		if(cavernMap[priorX + 1][priorY] != " " ) {
+          			shownMap[priorX + 1][priorY] = cavernMap[priorX + 1][priorY];
           		}
           	}
           	if(move == "x") {
@@ -176,10 +188,12 @@ public class andrewRoom extends Room{
           	if(priorX == 20 && priorY == 4) {
           		end = true;
           		System.out.println("The wumpus ate you");
+          		System.out.println("Resetting room...");
           	}
           	if(priorX == 5 && priorY == 8) {
           		end = true;
           		System.out.println("You fell in a slime pit");
+          		System.out.println("Resetting room...");
           	}
         		
           
@@ -197,15 +211,17 @@ public class andrewRoom extends Room{
 			e.printStackTrace();
 		}
         }
-    
+    //not quite working
+    //TODO fix printing Arrays
     public void printArray(String[][] array) {
     	int i,j;
-    	for(i = 0; i <= 9; i++) {
-    		for(j = 0; j <= 9; j++) {
+    	for(i = 0; i < 9; i++) {
+    		for(j = 0; j < 24; j++) {
     			if(array == cavernMap) {
-    				System.out.println(cavernMap[i][j]);
+    				System.out.println(cavernMap[j][i] + " ");
     			}else if(array == shownMap) {
-    				System.out.println(cavernMap[i][j]);
+    				System.out.println(shownMap[j][i] + " ");
+    				
     			}
     		}
     		System.out.println("\n");
