@@ -7,6 +7,30 @@ public class andrewRoom extends Room{
     /**
      * create room
      */
+	
+	 String [][] cavernMap = {
+     		{"|","X","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","!","|"},
+     		{"|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|"},
+     		{"|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|"},
+     		{"|","-","_","|","-","!","|","-","_","|","-","_","|","-","_","|","-","!","|","-","!","|","-","!","|"},
+     		{"|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","!","|","-","%","|","-","!","|"},
+     		{"|","-","_","|","-","_","|","-","_","|","-","!","|","-","_","|","-","!","|","-","!","|","-","!","|"},
+     		{"|","-","_","|","-","_","|","-","!","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|"},
+     		{"|","-","#","|","-","#","|","-","#","|","-","!","|","-","_","|","-","_","|","-","_","|","-","_","|"},
+     		{"|","-","#","|","-","*","|","-","#","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|"},
+     		{"|","-","#","|","-","#","|","-","#","|","-","_","|","-","_","|","-","_","|","-","!","|","-","_","|"}};
+     
+     String[][] shownMap = {
+     		{"|","X"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
+     		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
+     		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
+     		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
+     		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
+     		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
+     		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
+     		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
+     		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
+     		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"}};
 
     public andrewRoom(){
         super("Cavern");
@@ -35,7 +59,7 @@ public class andrewRoom extends Room{
 		
         System.out.println("The wumpus is surrounded by it's blood denoted with !. You can use these clues to find it, but avoid slime pits, which are surrounded by #");
         System.out.println("You are the X. Move with WASD");
-        System.out.println("When you think you know where he is, press x to shoot your arrow. You will always shoot to the right.");
+        System.out.println("When you think you know where he is, press x to shoot your arrow. You will always shoot one cavern to the right.");
         System.out.print("Press Enter...");
 
         _in.nextLine();
@@ -57,76 +81,115 @@ public class andrewRoom extends Room{
 		}
         System.out.println("Good Luck");
         
-        
-       
-        
-        String [][] cavernMap = {
-        		{"|","X","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","!","|"},
-        		{"|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|"},
-        		{"|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|"},
-        		{"|","-","_","|","-","!","|","-","_","|","-","_","|","-","_","|","-","!","|","-","!","|","-","!","|"},
-        		{"|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|","-","!","|","-","%","|","-","!","|"},
-        		{"|","-","_","|","-","_","|","-","_","|","-","!","|","-","_","|","-","!","|","-","!","|","-","!","|"},
-        		{"|","-","_","|","-","_","|","-","!","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|"},
-        		{"|","-","#","|","-","#","|","-","#","|","-","!","|","-","_","|","-","_","|","-","_","|","-","_","|"},
-        		{"|","-","#","|","-","*","|","-","#","|","-","_","|","-","_","|","-","_","|","-","_","|","-","_","|"},
-        		{"|","-","#","|","-","#","|","-","#","|","-","_","|","-","_","|","-","_","|","-","!","|","-","_","|"}};
-        
-        String[][] shownMap = {
-        		{"|","X"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
-        		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
-        		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
-        		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
-        		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
-        		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
-        		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
-        		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
-        		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"},
-        		{"|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|","-"," ","|"}};
-        
         boolean end = false;
+        boolean moveOn = false;
         int priorX = 1;
         int priorY = 0;
         
-      
+      while(!moveOn) {
+    	  
+    	  priorX = 1;
+    	  priorY = 0;
+    	  printArray(shownMap);
+    	  
+    	  while(!end) {
+    		  
+    		  System.out.println("Move or shoot (WASD/X)");
+    		  
+          	String move =  _in.nextLine();
+          	
+          	System.out.println(move);
+          	
+          	if(move == "W" ) {
+          		if(priorY == 0) {
+          			shownMap [priorX][priorY] = "-";
+          			shownMap [priorX][9] = "X";
+          			priorY = 9;
+
+          		}else {
+          			shownMap [priorX][priorY] = "-";
+          			shownMap [priorX][priorY - 1] = "X";
+          			priorY--;
+          		}
+          	}
+          	if(move == "A" ) {
+          		
+          		
+          		if(priorX == 0) {
+          			shownMap [priorX][priorY] = "-";
+          			shownMap [22][priorY] = "X";
+          			priorX = 22;
+
+          		}else {
+          			shownMap [priorX][priorY] = "-";
+              		shownMap [priorX - 3][priorY] = "X";
+              		priorX -= 3;
+          		}
+          			
+          	}
+          	if(move == "S" ) {
+          		
+          		if(priorY == 9) {
+          			shownMap [priorX][priorY] = "-";
+          			shownMap [priorX][9] = "X";
+          			priorY = 0;
+
+          		}else {
+          			shownMap [priorX][priorY] = "-";
+              		shownMap [priorX][priorY + 1] = "X";
+              		priorY++;
+          		}
+          	}
+          	if(move == "D" ) {
+          		if(priorX == 22) {
+          			shownMap [priorX][priorY] = "-";
+          			shownMap [1][priorY] = "X";
+          			priorX = 1;
+
+          		}else {
+          			shownMap [priorX][priorY] = "-";
+              		shownMap [priorX + 3][priorY] = "X";
+              		priorX += 3;
+          		}
+          	}
+          	if(move == "x") {
+          		if(priorX == 19 && priorY == 4) {
+          			System.out.println("You win and can move on to the next room");
+          			moveOn = true;
+          		}else {
+          			System.out.println("You missed.");
+          			System.out.println("Resetting room...");
+          			 try {
+          					Thread.sleep(5000);
+          				} catch (InterruptedException e) {
+          					// TODO Auto-generated catch block
+          					e.printStackTrace();
+          				}
+          		        }
+          		}
+          		
+          	printArray(shownMap);
+          	}
+          	
+    	  
+          	
+          	if(priorX == 20 && priorY == 4) {
+          		end = true;
+          		System.out.println("The wumpus ate you");
+          	}
+          	if(priorX == 5 && priorY == 8) {
+          		end = true;
+          		System.out.println("You fell in a slime pit");
+          	}
+        		
+          
+          //Print full map
+          	printArray(cavernMap);
+    	  
+      }
         
-        while(!end) {
-        	
-        	String move =  _in.nextLine();
-        	if(move == "W" ) {
-        		shownMap [priorX][priorY] = "_";
-        		shownMap [priorX][priorY - 1] = "X";
-        		priorY--;
-        	}
-        	if(move == "A" ) {
-        		shownMap [priorX][priorY] = "_";
-        		shownMap [priorX - 3][priorY] = "X";
-        		priorX -= 3;
-        	}
-        	if(move == "S" ) {
-        		shownMap [priorX][priorY] = "_";
-        		shownMap [priorX][priorY + 1] = "X";
-        		priorY++;
-        	}
-        	if(move == "D" ) {
-        		shownMap [priorX][priorY] = "_";
-        		shownMap [priorX + 3][priorY] = "X";
-        		priorX += 3;
-        	}
-        	//TODO print array here
-        	
-        	if(priorX == 20 && priorY == 4) {
-        		end = true;
-        		System.out.println("The wumpus ate you");
-        	}
-        	if(priorX == 5 && priorY == 8) {
-        		end = true;
-        		System.out.println("You fell in a slime pit");
-        	}
-        }
         
-        //TODO print full map
-	
+		
         try {
 			Thread.sleep(10000);
 		} catch (InterruptedException e) {
@@ -134,4 +197,20 @@ public class andrewRoom extends Room{
 			e.printStackTrace();
 		}
         }
+    
+    public void printArray(String[][] array) {
+    	int i,j;
+    	for(i = 0; i <= 9; i++) {
+    		for(j = 0; j <= 9; j++) {
+    			if(array == cavernMap) {
+    				System.out.println(cavernMap[i][j]);
+    			}else if(array == shownMap) {
+    				System.out.println(cavernMap[i][j]);
+    			}
+    		}
+    		System.out.println("\n");
+    	}
+    	
+    }
+    
     }
